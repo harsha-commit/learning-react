@@ -8,6 +8,7 @@ const heading1 = React.createElement(
   "Heading 1"
 );
 
+// React.createElement(tag, attribute, content)
 const heading2 = React.createElement(
   "h1",
   {
