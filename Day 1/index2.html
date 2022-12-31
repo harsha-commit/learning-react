@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Namaste React</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!-- Demonstration: We can add React to existing project -->
+    <div id="header"><h1>Header</h1></div>
+    <!-- React replaces the below code inside div-->
+    <div id="root">Not Rendered</div>
+    <div id="footer"><h1>Footer</h1></div>
+
+    <!-- JS files someone wrote for us -->
+
+    <!--Core library-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+
+    <!--Web version-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      // Creating a React element
+      // {id: "title"} => <h1 id="title">Namaste from React </h1>
+      const heading1 = React.createElement(
+        "h1",
+        {
+          id: "title1",
+        },
+        "Heading 1"
+      );
+
+      const heading2 = React.createElement(
+        "h1",
+        {
+          id: "title2",
+        },
+        "Heading 2"
+      );
+
+      const container = React.createElement("div", { className: "headings" }, [
+        heading1,
+        heading2,
+      ]);
+
+      // React element is a JS object !!
+      console.log(container);
+
+      // Creating a Root (a single point of origin (for building) kind of thing)
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+
+      // passing a React element inside the root
+      root.render(container);
+    </script>
+  </body>
+</html>
