@@ -1,20 +1,2 @@
 
-BUNDLERS: vite, parcel, webpack
-parcel: a JS package, to get this we need an package manager 
-npm: a package manager 
-npm install parcel -D , installing as dev-dependency 
-^2.8.2 means auto-upgrade if newer version comes up
-package-lock, locks the version
-Never touch package-lock and node modules
-   
-The older way of getting React into our app is not the best practice,
-as if the version changes or server goes down, it increases our work.
-So..
-
-npm install react 
-npm install react-dom
-
-npm => execute with npm
-
-npx parcel index.html
 
