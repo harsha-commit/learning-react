@@ -22,6 +22,8 @@ const heading1 = React.createElement(
   "h1",
   {
     id: "title1",
+    // attributes are attributes , even if they are not semantically correct
+    hello: "world",
   },
   "Heading 1 from Parcel"
 );

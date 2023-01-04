@@ -2,3 +2,4 @@ Files and their Purpose
 1. index.html => Creating elements using DOM
 2. index2.html => Creating elements using React, inside HTML
 3. index3.html => Creating elements using React, in a seperate file
+4. Notes.txt => Extracting important concepts and code
