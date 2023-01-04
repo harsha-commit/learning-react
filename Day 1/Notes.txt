@@ -1,0 +1,28 @@
+*************** DAY 1 ***************
+
+<!-- FROM HTML -->
+
+<div id="root">
+    <h1> Namaste from HTML </h1>
+</div>
+
+<!-- TO JAVASCRIPT -->
+
+const heading = document.createElement("h1");
+heading.innerHTML = "Namaste from JavaScript";
+const root = document.getElementById("root");
+root.appendChild(heading);
+
+<! -- TO REACT -->
+
+// don't forget to add script links
+// React => Core library, ReactDOM => Browser specific, changing DOM
+
+const heading = React.createElement("h1", {id: title}, "Namaste from React");
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading);
+
+// React => HTML inside JS, but not user friendly => So JSX was introduced.
+
+Important Links:
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web (for Web APIs and other theory)
