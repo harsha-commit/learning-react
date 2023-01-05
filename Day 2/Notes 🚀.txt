@@ -13,7 +13,7 @@ Bundlers:
     To get this package, we need a package manager
 
 Using npm (NOT Node Package Manager):
-    npm init -y  // adds package.json
+    npm init -y  // initializes npm and adds package.json
     npm install -D parcel // only for developer machine, not for production, so -D (dev dependency)
     npm install --save-dev parcel // same as above, adds package-lock.json and node_modules
     npm install react 
@@ -39,9 +39,14 @@ Parcel Features:
     Manages Port number
     Consistent Hashing Algorithm
     Zero Config
+    Tree Shaking - Removing unwanted code (only keep which is used)
 
 Understanding caret:
     "parcel": "^2.8.2" // auto upgrade if newer versions are available
+
+Understanding package.json:
+    Configuration used to manage dependencies
+    use "browserslist" to manage browser compatible versions
 
 Understanding package-lock.json
     Keeps track of exact versions used in the application
