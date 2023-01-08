@@ -17,9 +17,16 @@ const Body = () => {
   // the parameter is optional and is the Initial value of the variable
   // cannot directly modify the variable - React , only using 2nd array element (a function)
   // good practice to write setVariableName
-  const [searchText, setSearchText] = useState("KFC");
+  const [searchText, setSearchText] = useState("");
+  const [restaurants, setRestaurants] = useState(restaurantList);
+  // const [searchClicked, setSearchClicked] = useState("false");
 
-  const [searchClicked, setSearchClicked] = useState("false");
+  function filterData(searchText) {
+    const rest = restaurantList.filter((restaurant) =>
+      restaurant.data.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    return rest;
+  }
 
   // Hooks are basically a function,
   // normal variable => change in value == change in DOM / UI ? No. (no tracking)
@@ -39,20 +46,26 @@ const Body = () => {
           }}
         />
 
-        <h1>Two Way Data Binding - {searchText}</h1>
-        <h1>Clicked? - {searchClicked}</h1>
+        {/* <h1>Two Way Data Binding - {searchText}</h1>
+        <h1>Clicked? - {searchClicked}</h1> */}
         <button
           className="search-btn"
           onClick={() => {
-            setSearchClicked("true");
+            // need to filter the data
+            // update the state
+            const data = filterData(searchText);
+            console.log(data);
+            setRestaurants(data);
           }}
         >
-          Searching - {searchText}...
+          Searching: {searchText}
         </button>
       </div>
       <div className="restaurant-list">
-        {restaurantList.map((restaurant) => {
-          return <RestaurantCard {...restaurant.data} />;
+        {restaurants.map((restaurant) => {
+          return (
+            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+          );
         })}
       </div>
     </>
