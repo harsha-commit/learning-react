@@ -9,7 +9,8 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 
-// you can write Header.jsx, but some external libraries track the extensions, os it might break, be careful
+// React is faster, because of Reconciliation (one of the expensive operations is DOM manipulation)
+// because it doesn't need to re-render the whole page.
 
 const AppLayout = () => {
   return (

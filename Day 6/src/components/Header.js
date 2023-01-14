@@ -1,10 +1,11 @@
-/**
- * Two ways of exporting**
-    1. export default Title; (Default Import), can rename after import
-    2. second way is shown in the code, importing is different for this (Named Import), NO RENAME
- *
- */
+import { useState } from "react";
+
+const loggedInUser = () => {
+  return true;
+};
+
 export const Title = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <a href="/">
       <img
@@ -28,6 +29,7 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {isLoggedIn ? <button>Log out</button> : <button>Login</button>}
     </div>
   );
 };
